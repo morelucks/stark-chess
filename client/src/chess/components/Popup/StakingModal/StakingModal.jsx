@@ -15,7 +15,6 @@ const StakingModal = ({ onClosePopup }) => {
     const quickStakes = [10, 15, 20, 25, 30];
 
     useEffect(() => {
-        // Reset balance to 150 STRK for existing users
         resetDummyBalance();
         // Load player balance
         setPlayerBalance(getDummyBalance());
@@ -47,11 +46,9 @@ const StakingModal = ({ onClosePopup }) => {
         try {
             const amount = parseFloat(stakeAmount);
             
-            // Simulate stake transaction
             const transactionResult = await simulateStakeTransaction(amount);
             
             if (transactionResult.success) {
-                // Save stake data to localStorage
                 const stakeData = {
                     amount,
                     timestamp: Date.now(),
@@ -63,10 +60,8 @@ const StakingModal = ({ onClosePopup }) => {
                 
                 saveStakeData(stakeData);
                 
-                // Update local balance state
                 setPlayerBalance(transactionResult.newBalance);
                 
-                // Start the game as PvP (staking is for PvP)
                 dispatch(setupNewGame('pvp'));
                 onClosePopup();
             } else {
