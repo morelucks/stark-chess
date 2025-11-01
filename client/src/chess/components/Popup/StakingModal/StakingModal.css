@@ -1,0 +1,308 @@
+.staking-modal {
+    max-width: 500px;
+    width: 90%;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, var(--game-selection-bg) 0%, #4a5568 100%);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.staking-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.staking-header h1 {
+    font-size: 2.2em;
+    margin: 0 0 10px 0;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #61afef, #98c379);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.staking-header p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin: 0 0 15px 0;
+    opacity: 0.9;
+}
+
+.balance-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: rgba(152, 195, 121, 0.1);
+    border: 1px solid rgba(152, 195, 121, 0.3);
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin-top: 10px;
+}
+
+.balance-label {
+    color: var(--text-color);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.balance-amount {
+    color: #98c379;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.staking-content {
+    margin-bottom: 30px;
+}
+
+.stake-input-section {
+    margin-bottom: 25px;
+}
+
+.stake-label {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.stake-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.stake-input-container:focus-within {
+    border-color: #61afef;
+    box-shadow: 0 0 0 3px rgba(97, 175, 239, 0.2);
+}
+
+.stake-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.3em;
+    color: #fff;
+    outline: none;
+    font-weight: 600;
+}
+
+.stake-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.stake-input.invalid {
+    color: #e06c75;
+}
+
+.eth-symbol {
+    padding: 15px 20px;
+    color: #98c379;
+    font-weight: 700;
+    font-size: 1.1em;
+    background: rgba(152, 195, 121, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.error-message {
+    color: #e06c75;
+    font-size: 0.9em;
+    margin: 8px 0 0 0;
+    font-weight: 500;
+}
+
+.quick-stakes {
+    margin-bottom: 25px;
+}
+
+.quick-stakes-label {
+    font-size: 1em;
+    color: var(--text-color);
+    margin: 0 0 12px 0;
+    font-weight: 500;
+}
+
+.quick-stakes-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.quick-stake-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.quick-stake-btn:hover:not(:disabled) {
+    background: rgba(97, 175, 239, 0.2);
+    border-color: #61afef;
+    color: #fff;
+}
+
+.quick-stake-btn.selected {
+    background: #61afef;
+    border-color: #61afef;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(97, 175, 239, 0.3);
+}
+
+.quick-stake-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.game-info {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 8px 0;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 16px;
+    margin-top: 8px;
+}
+
+.info-label {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.info-value {
+    color: #fff;
+    font-weight: 600;
+}
+
+.staking-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-cancel {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover:not(:disabled) {
+    background: rgba(224, 108, 117, 0.2);
+    border-color: #e06c75;
+    color: #e06c75;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #61afef 0%, #528cbb 100%);
+    color: #fff;
+    border: none;
+    flex: 2;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(97, 175, 239, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(97, 175, 239, 0.4);
+}
+
+.btn-primary:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn-primary.disabled {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn-primary.disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .staking-modal {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+    
+    .staking-header h1 {
+        font-size: 1.8em;
+    }
+    
+    .quick-stakes-buttons {
+        gap: 6px;
+    }
+    
+    .quick-stake-btn {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+    
+    .staking-actions {
+        flex-direction: column;
+    }
+    
+    .btn-cancel,
+    .btn-primary {
+        flex: 1;
+    }
+}

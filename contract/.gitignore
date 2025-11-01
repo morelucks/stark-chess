@@ -1,0 +1,16 @@
+target
+dojo_mainnet.toml
+.env.sepolia
+.env.mainnet
+.env.local
+.env.testnet
+.env
+.DS_Store
+.idea
+.vscode
+*.log
+*.tsbuildinfo
+node_modules
+dist
+coverage
+.cache      

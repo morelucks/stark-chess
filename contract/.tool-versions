@@ -1,0 +1,7 @@
+# path/to/project/.tool-versions
+scarb 2.12.2
+sozo 1.7.1
+katana 1.7.0
+torii 1.8.3
+starknet-foundry 0.43.1
+dojo 1.7.2

@@ -1,0 +1,10 @@
+[world]
+name = "Full-Starter-React"
+seed = "full_starter_react_sepolia1"
+
+[namespace]
+default = "full_starter_react"
+
+[env]
+rpc_url = "https://starknet-sepolia.public.blastapi.io/rpc/v0_8"
+# account_address and private_key are passed via CLI/env when migrating
