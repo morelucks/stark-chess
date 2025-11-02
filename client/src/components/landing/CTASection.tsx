@@ -1,8 +1,12 @@
 import { ChevronRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
-export default function CTASection() {
-  const navigate = useNavigate();
+interface CTASectionProps {
+  onStartPlaying: () => void;
+  isConnecting: boolean;
+  isConnected: boolean;
+}
+
+export default function CTASection({ onStartPlaying, isConnecting, isConnected }: CTASectionProps) {
 
   return (
     <section className="container mx-auto px-6 py-24 max-w-6xl">
@@ -23,11 +27,12 @@ export default function CTASection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <button
-              onClick={() => navigate("/chess")}
-              className="px-10 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 rounded-lg font-semibold transition transform hover:scale-105 active:scale-95 shadow-lg shadow-purple-500/30 flex items-center justify-center gap-2"
+              onClick={onStartPlaying}
+              disabled={isConnecting}
+              className="px-10 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 rounded-lg font-semibold transition transform hover:scale-105 active:scale-95 shadow-lg shadow-purple-500/30 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
-              Get Started Free
-              <ChevronRight className="w-5 h-5" />
+              {isConnecting ? "Connecting Wallet..." : isConnected ? "Get Started Free" : "Connect & Play"}
+              {!isConnecting && <ChevronRight className="w-5 h-5" />}
             </button>
             <button className="px-10 py-4 rounded-lg border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 transition backdrop-blur-sm font-semibold">
               Learn More

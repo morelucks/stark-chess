@@ -57,7 +57,7 @@ export default function ChessScreen() {
           <div className="flex items-center gap-2">
             {status !== "connected" ? (
               <button
-                className="px-3 py-1.5 rounded bg-emerald-600 hover:bg-emerald-700 text-white text-xs"
+                className="px-3 py-1.5 rounded bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white text-xs transition shadow-lg shadow-emerald-500/20 disabled:opacity-50"
                 onClick={handleConnect}
                 disabled={isConnecting}
               >
@@ -67,7 +67,7 @@ export default function ChessScreen() {
               <>
                 <span className="text-xs text-slate-400 mr-2">{address?.slice(0, 6)}...{address?.slice(-4)}</span>
                 <button
-                  className="px-3 py-1.5 rounded bg-slate-600 hover:bg-slate-700 text-white text-xs"
+                  className="px-3 py-1.5 rounded border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white text-xs font-semibold transition"
                   onClick={handleDisconnect}
                 >
                   Disconnect
@@ -75,14 +75,14 @@ export default function ChessScreen() {
               </>
             )}
             <button
-              className="px-3 py-1.5 rounded bg-indigo-600 hover:bg-indigo-700 text-white text-xs disabled:opacity-50"
+              className="px-3 py-1.5 rounded bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white text-xs disabled:opacity-50 transition shadow-lg shadow-purple-500/20"
               onClick={() => initializePlayer()}
               disabled={status !== "connected" || isInitializing}
             >
               {isInitializing ? `Starting (${currentStep})...` : "Start Game"}
             </button>
             <button
-              className="px-3 py-1.5 rounded bg-blue-600 hover:bg-blue-700 text-white text-xs disabled:opacity-50"
+              className="px-3 py-1.5 rounded bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white text-xs disabled:opacity-50 transition shadow-lg shadow-purple-500/20"
               onClick={() => createGame(true)}
               disabled={status !== "connected" || isMoving}
             >
