@@ -135,7 +135,7 @@ const GameModeSelection = ({ gameMode, onNewGame, onShowStakingModal }) => {
             <h3 className="chess-sidebar-title">Game Modes</h3>
             <div className="game-mode-buttons">
                 <button 
-                    className={`btn-mode ${gameMode === 'pvp' ? 'active' : ''}`} 
+                    className={`btn-mode-pvp ${gameMode === 'pvp' ? 'active' : ''}`} 
                     onClick={() => onShowStakingModal(true)} 
                     disabled={gameMode === 'pvp'}
                 >
@@ -211,15 +211,15 @@ export default function ChessSidebar() {
             {/* Simple nav tabs */}
             <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
                 <button
-                    className="btn-mode"
-                    style={{ flex: 1, background: activeTab === 'controls' ? '#3b82f6' : 'rgba(71,85,105,0.5)', color: '#fff' }}
+                    className={`btn-mode ${activeTab === 'controls' ? 'active' : ''}`}
+                    style={{ flex: 1 }}
                     onClick={() => setActiveTab('controls')}
                 >
                     Controls
                 </button>
                 <button
-                    className="btn-mode"
-                    style={{ flex: 1, background: activeTab === 'leaderboard' ? '#3b82f6' : 'rgba(71,85,105,0.5)', color: '#fff' }}
+                    className={`btn-mode ${activeTab === 'leaderboard' ? 'active' : ''}`}
+                    style={{ flex: 1 }}
                     onClick={() => setActiveTab('leaderboard')}
                 >
                     Leaderboard
