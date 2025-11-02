@@ -38,6 +38,7 @@
     "lucide-react": "^0.518.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^7.9.5",
     "starknet": "^6.23.1",
     "tailwind-merge": "^3.3.1",
     "uuid": "^10.0.0",
